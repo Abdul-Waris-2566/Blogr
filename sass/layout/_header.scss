@@ -1,0 +1,219 @@
+.header {
+  height: 65vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 5;
+
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 143, 112, 0.8),
+      rgba(255, 61, 84, 0.8)
+    ),
+    url(./images/bg-pattern-intro-desktop.svg);
+
+  background-size: 250rem;
+  padding: 5rem 11rem;
+  border-bottom-left-radius: 5rem;
+  position: relative;
+
+  &__text-box {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    display: block;
+    width: 90%;
+  }
+  .hero {
+    top: 0;
+    left: 0;
+    max-height: 195rem;
+  }
+
+  .logo {
+    position: absolute;
+    top: 4.2rem;
+    height: 3.5rem;
+    @include respond(tab-port) {
+      left: 5rem;
+    }
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 14rem;
+  @include respond(tab-port) {
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+    height: 80vh;
+    width: 70vw;
+    color: $color-primary-dark-blue;
+    top: 50%;
+    background-color: $color-white;
+    left: 50%;
+    transform: translate(80%, -45%);
+    // opacity: 0;
+    background-color: $color-white;
+    box-shadow: -1rem 2rem 4rem rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    margin: 0rem auto;
+    padding: 5rem;
+    border-radius: 5px;
+    transition: all 0.5s;
+    @include respond(phone) {
+      width: 85vw;
+      height: 75vh;
+      padding: 4rem;
+    }
+  }
+
+  &__items {
+    list-style-type: none;
+    display: flex;
+
+    @include respond(tab-port) {
+      flex-direction: column;
+      z-index: 100;
+    }
+
+    &-group {
+      & .group-box {
+        padding: 0 1.5rem;
+        margin-bottom: 1.5rem;
+        @include respond(tab-port) {
+          padding: 0rem;
+          margin-bottom: 0rem;
+          margin: 0;
+        }
+        .link--main {
+          color: $color-white;
+          font-weight: 700;
+          text-decoration: none;
+          transition: all 0.4s;
+          @include respond(tab-port) {
+            color: $color-primary-dark-blue;
+            font-size: 1.7rem;
+          }
+        }
+        .arrow {
+          margin: 0 0 2px 3px;
+          transition: all 0.4s;
+          width: 1rem;
+        }
+      }
+      & .items-box {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        background-color: $color-white;
+        width: 15rem;
+        padding: 2.5rem;
+        border-radius: 4px;
+        height: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s;
+        z-index: 100;
+
+        @include respond(tab-port) {
+          position: relative;
+          padding: 1.5rem 100%;
+          transform: translateX(-5rem);
+
+          align-items: center;
+          margin: 0 auto;
+          background-color: whitesmoke;
+          width: inherit;
+        }
+
+        & .link {
+          color: hsl(237, 17%, 21%);
+          text-decoration: none;
+          font-size: 1.5rem;
+          font-weight: 400;
+          transition: all 0.3s;
+
+          &:hover {
+            font-weight: 600;
+          }
+          @include respond(tab-port) {
+            color: $color-dark-blue-2;
+            // font-size: 1rem;
+            font-weight: 600;
+          }
+        }
+      }
+
+      &:hover {
+        .link--main {
+          border-bottom: 2px solid white;
+        }
+        .arrow {
+          transform: rotate(180deg);
+        }
+
+        .items-box {
+          opacity: 1;
+          visibility: visible;
+          height: inherit;
+        }
+      }
+    }
+  }
+
+  .cta-box {
+    display: flex;
+    margin-top: -1.5rem;
+
+    @include respond(tab-port) {
+      flex-direction: column;
+      margin-bottom: 4rem;
+      &::before {
+        content: "";
+        width: 80%;
+        border-top: 1px solid rgba(128, 128, 128, 0.542);
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        margin-top: -2rem;
+      }
+    }
+  }
+
+  // tab-port/mobile Menu
+}
+
+.mobile-menu {
+  display: none;
+}
+
+@include respond(tab-port) {
+  .mobile-menu {
+    display: block;
+    position: fixed;
+    right: 5rem;
+    top: 4rem;
+    background-color: rgba($color-primary-red-light, 0.8);
+    border-radius: 3px;
+    cursor: pointer;
+    z-index: 10000;
+  }
+
+  .menu-icon {
+    display: block;
+    padding: 1rem;
+  }
+
+  .hide {
+    display: none;
+  }
+}

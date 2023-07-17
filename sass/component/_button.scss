@@ -1,0 +1,47 @@
+.cta-btn {
+  color: $color-white;
+  text-decoration: none;
+  border-radius: 3rem;
+  font-family: $font-family-overpass;
+  font-weight: 700;
+  display: inline-block;
+  transition: all 0.3s;
+  &.mobile {
+    @include respond(tab-port) {
+      // background-color: $color-white;
+
+      color: $color-primary-dark-blue;
+      font-size: 1.7rem;
+    }
+  }
+
+  &:hover {
+    background-color: $color-white;
+    color: $color-primary-red-light;
+  }
+
+  &--white {
+    color: $color-primary-red-light;
+    background-color: $color-white;
+    transition: all 0.3s;
+    &.mobile {
+      @include respond(tab-port) {
+        background-color: none;
+        background-image: linear-gradient(
+          to right,
+          hsl(13, 100%, 72%),
+          hsl(353, 100%, 62%)
+        );
+        color: white;
+        &.mobile:hover {
+          transform: translateY(2px);
+        }
+      }
+
+      &:hover {
+        background-color: $color-primary-red-very-light;
+        color: $color-white;
+      }
+    }
+  }
+}

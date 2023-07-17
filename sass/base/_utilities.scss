@@ -1,0 +1,33 @@
+.u-padding-medium {
+  padding: 1.2rem 3.5rem;
+}
+.u-padding-small {
+  padding: 1rem 1.5rem;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 2rem;
+}
+
+.u-margin-bottom-semi-medium {
+  margin-bottom: 3rem;
+}
+.u-margin-bottom-medium {
+  margin-bottom: 4rem;
+}
+.u-margin-bottom-big {
+  margin-bottom: 6rem;
+}
+
+.u-border-white {
+  box-shadow: inset 0 0 1px 1px white;
+  // border: 3px solid white;
+}
+
+.u-white-color {
+  color: white;
+}
+
+.u-backckground-primary-color {
+  background-color: $color-primary-red-light;
+}

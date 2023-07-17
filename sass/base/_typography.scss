@@ -1,0 +1,34 @@
+.heading-primary {
+  color: white;
+  &--main {
+    font-size: 7rem;
+    font-weight: 700;
+    display: block;
+    @include respond(tab-port) {
+      font-size: 5rem;
+    }
+    @include respond(tab-port) {
+      font-size: 4rem;
+    }
+  }
+  &--sub {
+    font-size: 1.6rem;
+    font-weight: 300;
+    display: inline-block;
+  }
+}
+
+.heading-secondary {
+  font-size: 3rem;
+  color: $color-primary-dark-blue;
+}
+
+.heading-tertiary {
+  font-size: 2.4rem;
+  color: $color-primary-dark-blue;
+}
+
+.paragraph-text {
+  color: hsl(207, 13%, 34%);
+  line-height: 1.7;
+}
